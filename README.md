@@ -1,5 +1,22 @@
 # Sentiment Analyzer
 
+## The problem
+Project output: A sentiment analysis tool that classifies user comments, tweets, or reviews. 
+Tools used: Python, NLTK, VADER, Pandas, Matplotlib 
+Data source: Public Twitter sentiment dataset from Kaggle or sample social media text data 
+Core concept: Natural language processing, sentiment scoring, text cleaning, and polarity analysis 
+
+Idea from: https://skillifysolutions.com/blogs/artificial-intelligence/best-ai-project-ideas-for-students/
+
+## Product hypothesis
+Claude code-generated solution. 
+
+## Demo
+Experimented with manually entered examples. 
+
+## My role
+Claude code-generated solution. Tested self-generated examples. 
+
 Classifies text (tweets, reviews, comments) as **positive, negative, neutral, or mixed** using NLTK's VADER.
 
     pip install -r requirements.txt
@@ -18,5 +35,14 @@ Outputs go to `output/`: `predictions.csv`, `distribution.png`, `compound_hist.p
 ## Using the Kaggle Twitter dataset
 Download it, then pass `--csv`. Its labels must be positive/negative/neutral/mixed (map other values first, e.g. "irrelevant" -> neutral) to get accuracy and the confusion matrix. Thresholds are constants at the top of `sentiment_tool.py`.
 
-## Limits
+## Evaluation and results
+Mixed sentiment (combination of positive/negative) seemed to be harder to detect. Slang was also hit or miss.
 VADER is lexicon-based: sarcasm and slang are weak spots, and the bundled 32-row sample is tiny, so its 97% accuracy is illustrative only (thresholds were tuned on it). Re-check on your own data.
+
+## Product decisions and tradeoffs
+Would like to explore retraining with a larger sample and to incorporate different linguistic styles (e.g. slang)
+
+## What I would do next
+1. Expand solution to understand slang
+1. Improve accuracy of "mixed" to better represent responses with both positive and negative sentiment.
+1. Could also explore assigning an emotion/intensity score to the sentiment analysis (i.e. anger, joy, sadness, etc.)
